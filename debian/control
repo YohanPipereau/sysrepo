@@ -21,7 +21,30 @@ Vcs-Git: https://github.com/YohanPipereau/sysrepo
 Package: sysrepo
 Depends:
  ${misc:Depends},
+ ${shlibs:Depends}
+Architecture: any
+Description: a YANG-based configuration and operational datastore for
+ Unix/Linux applications.
+
+Package: sysrepo-dev
+Depends:
+ sysrepo
+Architecture: any
+Description: a YANG-based configuration and operational datastore for
+ Unix/Linux applications.
+
+Package: sysrepo-cpp
+Depends:
+ ${misc:Depends},
  ${shlibs:Depends},
+ sysrepo
+Architecture: any
+Description: a YANG-based configuration and operational datastore for
+ Unix/Linux applications.
+
+Package: sysrepo-cpp-dev
+Depends:
+ sysrepo-cpp
 Architecture: any
 Description: a YANG-based configuration and operational datastore for
  Unix/Linux applications.
