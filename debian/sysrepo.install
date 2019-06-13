@@ -1,0 +1,7 @@
+etc/sysrepo/*
+usr/bin/*
+usr/lib/*/libsysrepo.*
+usr/lib/x86_64-linux-gnu/pkgconfig/libsysrepo.pc
+usr/lib/x86_64-linux-gnu/sysrepo/plugins/
+usr/share/*
+var/run/*
