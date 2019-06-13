@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eux -o pipefail
+shopt -s failglob
+
+SYSREPOCTL=sysrepoctl
+
+${SYSREPOCTL} --install --yang=/usr/share/yang/ietf-netconf-notifications.yang --permissions=666
+${SYSREPOCTL} --install --yang=/usr/share/yang/nc-notifications.yang --permissions=666
+${SYSREPOCTL} --install --yang=/usr/share/yang/notifications.yang --permissions=666

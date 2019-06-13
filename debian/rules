@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/dpkg/architecture.mk
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_BUILD_TYPE:String="Release" \
+		-DCALL_TARGET_BINS_DIRECTLY=OFF \
+		-DGEN_LANGUAGE_BINDINGS=ON \
+		-DGEN_CPP_BINDINGS=ON \
+		-DBUILD_CPP_EXAMPLES=OFF \
+		-DBUILD_EXAMPLES=OFF \
+		-DGEN_LUA_BINDINGS=OFF \
+		-DGEN_JAVA_BINDINGS=OFF \
+		-DGEN_PYTHON_VERSION=OFF
+
+override_dh_install:
+	@echo "skip dh_install"
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Xextensions -Xuser_types
+
+override_dh_auto_test:
+ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+	make -C obj-$(DEB_HOST_GNU_TYPE) test ARGS=-V
+endif

@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b50df764..b30d44ba 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -40,7 +40,7 @@ endif()
+ set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG -O2")
+ set(CMAKE_C_FLAGS_DEBUG   "-g -O0")
+ 
+-set(CALL_TARGET_BINS_DIRECTLY ON CACHE BOOL "Enable calling sysrepoctl/sysrepocfg directly at install time")
++set(CALL_TARGET_BINS_DIRECTLY OFF CACHE BOOL "Enable calling sysrepoctl/sysrepocfg directly at install time")
+ set(INDIRECT_YANG_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/yang/" CACHE PATH "Where to store YANG files when not executing sysrepoctl directly")
+ set(CALL_SYSREPOCTL_BIN "${CMAKE_BINARY_DIR}/src/sysrepoctl" CACHE PATH "Path to the sysrepoctl binary to be used at install time")
+ set(CALL_SYSREPOCFG_BIN "${CMAKE_BINARY_DIR}/src/sysrepocfg" CACHE PATH "Path to the sysrepocfg binary to be used at install time")

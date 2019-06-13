@@ -1,0 +1,5 @@
+sysrepo (0.7.7-1) unstable; urgency=medium
+
+   * Initial release
+
+ -- Yohan Pipereau <ypiperea@cisco.com>  Thu, 13 Jun 2018 02:03:00 +0100

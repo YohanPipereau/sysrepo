@@ -1,0 +1,27 @@
+Source: sysrepo
+Section: misc
+Homepage: https://www.sysrepo.org
+Maintainer: Yohan Pipereau <ypiperea@cisco.com>
+Uploaders: sysrepo <sysrepo-devel@sysrepo.org>
+Priority: optional
+Standards-Version: 4.3.0
+Build-Depends:
+ libyang0.16,
+ cmake,
+ libcmocka-dev,
+ libprotobuf-c1,
+ libavl1,
+ swig (>= 3.0.12),
+ python3-all-dev,
+ python3-all-dbg,
+ pkg-config
+Vcs-Browser: https://github.com/YohanPipereau/sysrepo
+Vcs-Git: https://github.com/YohanPipereau/sysrepo
+
+Package: sysrepo
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Architecture: any
+Description: a YANG-based configuration and operational datastore for
+ Unix/Linux applications.
